@@ -8,9 +8,32 @@ This project is a tool for automatic analysis of animation. The program:
 ## Result
 ![](https://github.com/NataliaNadolna/Digits-detection-and-classification/blob/main/result.gif)
 
-## Dataset
-
 ## Detection
+
+## Dataset
+Created a dataset
+```python
+@dataclasses.dataclass()
+class Img_settings:
+    img_size = [28, 28]
+    background_colors = dict(red = (180, 255), green = (180, 255), blue = (180, 255))
+    ink_colors = dict(red = (0,100), green = (0,100), blue = (0,100))
+    number_position = dict(left = 3, right = 6, down = 24, up = 24)
+    font_scale = [0.9, 1.0]
+    thickness = [1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1]
+    fonts = [cv2.FONT_HERSHEY_SIMPLEX,
+            cv2.FONT_HERSHEY_DUPLEX, 
+            cv2.FONT_HERSHEY_COMPLEX, 
+            cv2.FONT_HERSHEY_TRIPLEX,
+            cv2.FONT_HERSHEY_SCRIPT_SIMPLEX,
+            cv2.FONT_ITALIC]
+    classes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+```
+
+### Image generation
+Class Writing_style in writing.py określa wygląd poszczególnego napisu
+
+### Dataset generation
 
 ## Classification model
 This model is a convolutional neural network (CNN) composed of multiple layers organized into three blocks: block_1, block_2, and classifier.
@@ -66,7 +89,7 @@ Here's a breakdown of each block:
 
 ## Training the model
 ### Parametres
-I achieved the best results with the following parameters:
+The best results were achieved with the following parameters:
 * 10 hidden units
 * 5 epochs
 * learning rate: 0.004
