@@ -14,6 +14,5 @@ class Img_settings:
             cv2.FONT_HERSHEY_COMPLEX, 
             cv2.FONT_HERSHEY_TRIPLEX,
             cv2.FONT_HERSHEY_SCRIPT_SIMPLEX,
-            #cv2.FONT_HERSHEY_SCRIPT_COMPLEX,
             cv2.FONT_ITALIC]
     classes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
