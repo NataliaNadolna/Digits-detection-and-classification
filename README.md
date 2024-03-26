@@ -1,4 +1,12 @@
 # Detection and classification digits on animation to calculate speed of the running dog
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Result](#result)
+- [Dataset](#dataset)
+
+  
 ## Introduction
 This project is a tool for automatic analysis of animation. The program:
 * detects a number indicating the distance covered by the dog,
