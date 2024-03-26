@@ -6,7 +6,7 @@ This project is a tool for automatic analysis of animation. The program:
 * and calculates the speed of the dog's run based on it.
 
 ## Result
-![](https://github.com/NataliaNadolna/Digits-detection-and-classification/blob/main/result.mp4)
+![](https://github.com/NataliaNadolna/Digits-detection-and-classification/blob/main/result.gif)
 
 ## Dataset
 
