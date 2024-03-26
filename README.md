@@ -7,13 +7,8 @@
 - [Digits detection](#digits-detection)
 - [Dataset for digits classification](#dataset-for-digits-classification)
 - [Classification model](#classification-model)
-- []()
-- []()
-- []()
-- []()
-- []()
-
-  
+- [Training the model](#training-the-model)
+ 
 ## Introduction
 This project is a tool for automatic analysis of animation. The program:
 * detects a number indicating the distance covered by the dog,
@@ -111,7 +106,6 @@ Here's a breakdown of each block:
 ### Classifier:
 * Flatten Layer: Flattens the feature maps into a 1D tensor, preparing them for input to the fully connected layers.
 * Linear Layer: A fully connected layer that takes the flattened features as input (in_features=hidden_units*7*7, as the spatial dimensions have been reduced by pooling operations) and produces an output tensor of size output_shape, which corresponds to the number of classes (10 classes) in a classification task.
-
 
 ## Training the model
 ### Parametres
