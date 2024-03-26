@@ -105,7 +105,7 @@ Here's a breakdown of each block:
 * Max Pooling Layer;
 ### Classifier:
 * Flatten Layer: Flattens the feature maps into a 1D tensor, preparing them for input to the fully connected layers.
-* Linear Layer: A fully connected layer that takes the flattened features as input (in_features=hidden_units*7*7, as the spatial dimensions have been reduced by pooling operations) and produces an output tensor of size output_shape, which corresponds to the number of classes (10 classes) in a classification task.
+* Linear Layer: A fully connected layer that takes the flattened features as input (in_features=hidden_units x7x7, as the spatial dimensions have been reduced by pooling operations) and produces an output tensor of size output_shape, which corresponds to the number of classes (10 classes) in a classification task.
 
 ## Training the model
 ### Parametres
