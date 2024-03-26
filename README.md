@@ -30,12 +30,4 @@ This model is a convolutional neural network (CNN) composed of multiple layers o
 * Flatten Layer: Flattens the feature maps into a 1D tensor, preparing them for input to the fully connected layers.
 * Linear Layer: A fully connected layer that takes the flattened features as input (in_features=hidden_units*7*7, as the spatial dimensions have been reduced by pooling operations) and produces an output tensor of size output_shape, which corresponds to the number of classes (10 classes) in a classification task.
 
-```python
-summary(model=model_0,
-        input_size=(32, 3, 28, 28), # make sure this is "input_size", not "input_shape"
-        # col_names=["input_size"], # uncomment for smaller output
-        col_names=["input_size", "output_size", "num_params", "trainable"],
-        col_width=20,
-        row_settings=["var_names"]
-)
-```
+
