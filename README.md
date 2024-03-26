@@ -5,7 +5,7 @@
 - [Introduction](#introduction)
 - [Result](#result)
 - [Dataset](#dataset)
-- [Classification model](#classification model)
+- [Classification model](#classification-model)
 - []()
 - []()
 - []()
