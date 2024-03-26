@@ -4,10 +4,9 @@
 
 - [Introduction](#introduction)
 - [Result](#result)
-- []()
-- [Dataset](#dataset)
+- [Digits detection](#digits-detection)
+- [Dataset for digits classification](#dataset-for-digits-classification)
 - [Classification model](#classification-model)
-
 - []()
 - []()
 - []()
@@ -27,7 +26,7 @@ This project is a tool for automatic analysis of animation. The program:
 ## Digits detection
 The digit detection was performed using the Roboflow platform. Digits were annotated on 4 frames of the animation, and a model was trained for digit detection in the animation images.
 
-## Dataset
+## Dataset for digits classification
 Created a dataset of images representing digits. Each image, sized 28x28 pixels, depicts a single digit (from 0 to 9). The color, font, size, thickness, and position of the digit on the image are specified in the Img_settings class.
 ```python
 @dataclasses.dataclass()
