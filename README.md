@@ -25,14 +25,31 @@ This project is a tool for automatic analysis of animation. The program:
 
 ## Dataset
 Created a dataset of images representing digits. Each image, sized 28x28 pixels, depicts a single digit (from 0 to 9). The color, font, size, thickness, and position of the digit on the image are specified in the Img_settings class.
+```python
+@dataclasses.dataclass()
+class Img_settings:
+    img_size = [28, 28]
+    background_colors = dict(red = (180, 255), green = (180, 255), blue = (180, 255))
+    ink_colors = dict(red = (0,100), green = (0,100), blue = (0,100))
+    number_position = dict(left = 3, right = 6, down = 24, up = 24)
+    font_scale = [0.9, 1.0]
+    thickness = [1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1]
+    fonts = [cv2.FONT_HERSHEY_SIMPLEX,
+            cv2.FONT_HERSHEY_DUPLEX, 
+            cv2.FONT_HERSHEY_COMPLEX, 
+            cv2.FONT_HERSHEY_TRIPLEX,
+            cv2.FONT_HERSHEY_SCRIPT_SIMPLEX,
+            cv2.FONT_ITALIC]
+    classes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+```
 
 ### Image generation
 To generate images, two classes were created: 
 * the Writing_style class, which defines the style of the digit on the generated image;
-* the Image class, which contains methods:
-  - generate_empty() - to create a blank image,
-  - write_text() - to write text on the image according to the specified style,
-  - save() - to save the image.
+* the Image class, which contains methods to:
+  - create a blank image,
+  - write text on the image according to the specified style,
+  - save the image.
 
 ### Dataset generation
 Class Dataset has two methods:
