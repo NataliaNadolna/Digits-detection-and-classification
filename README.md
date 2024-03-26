@@ -18,7 +18,7 @@
 This project is a tool for automatic analysis of animation. The program:
 * detects a number indicating the distance covered by the dog,
 * classifies this number,
-* and calculates the speed of the dog's run based on it.
+* calculates the speed of the dog's run based on it.
 
 ## Result
 ![](https://github.com/NataliaNadolna/Digits-detection-and-classification/blob/main/result.gif)
@@ -45,16 +45,18 @@ class Img_settings:
 
 ### Image generation
 To generate images, two classes were created: 
-* the Writing_style class, which defines the style of the digit on the generated image;
+* the Writing_style class, which defines the style of the digit on the generated image. The colors, position and font scale are chosen randomly, while the fonts and thickness is selected sequentially.
 * the Image class, which contains methods to:
   - create a blank image,
   - write text on the image according to the specified style,
   - save the image.
 
 ### Dataset generation
-Class Dataset has two methods:
-* generate() - to generate dataset
-* modify_img_in_folder() - to change font style in specific folders
+A dataset of 10,000 images has been created for 10 classes representing digits. It contains 900 training images and 100 test images per each class.
+Class Dataset has two methods to:
+* generate dataset;
+* change font style in specific folders;
+In created dataset folders with 1, 6 and 9 have changed fonts.
   
 ## Classification model
 This model is a convolutional neural network (CNN) composed of multiple layers organized into three blocks: block_1, block_2, and classifier.
