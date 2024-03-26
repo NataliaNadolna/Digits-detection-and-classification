@@ -46,13 +46,7 @@ class Writing_style():
         self.size = random.uniform(size[0], size[1])
 ```
 * the Image class, which contains methods:
-```python
-class Image():
-    def __init__(self, size: list, shape: int, colors: list):
-        self.size = size
-        self.shape = shape
-        self.colors = colors
-```
+
   - generate_empty() - to create a blank image,
 ```python
     def generate_empty(self):
