@@ -46,17 +46,23 @@ class Writing_style():
         self.size = random.uniform(size[0], size[1])
 ```
 * the Image class, which contains methods:
-
   - generate_empty() - to create a blank image,
+  - write_text() - to write text on the image according to the specified style,
+  - save() - to save the image.
+
 ```python
+class Image():
+    def __init__(self, size: list, shape: int, colors: list):
+        self.size = size
+        self.shape = shape
+        self.colors = colors
+    
     def generate_empty(self):
         image = np.zeros((self.size[0], self.size[1], self.shape), np.uint8)
         color = generate_color(Img_settings.background_colors)
         image[:] = (color[0], color[1], color[2])
         self.img = image
-```
-  - write_text() - to write text on the image according to the specified style,
-```python
+    
     def write_text(self, style: Writing_style, text):
         cv2.putText(img=self.img,
                     text=text, 
@@ -66,9 +72,10 @@ class Writing_style():
                     color=style.color, 
                     thickness=style.thickness, 
                     lineType=cv2.LINE_AA)
-```
-  - save() - to save the image.
 
+    def save(self, path: str):
+        cv2.imwrite(path, self.img)
+```
 ### Dataset generation
 
 ## Classification model
