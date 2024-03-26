@@ -55,7 +55,7 @@ To generate images, two classes were created:
 A dataset of 10,000 images has been created for 10 classes representing digits. It contains 900 training images and 100 test images per each class.
 Class Dataset has two methods to:
 * generate dataset;
-* change font style in specific folders;
+* change font style in specific folders.
 
 In created dataset folders with 1, 6 and 9 have changed fonts.
   
