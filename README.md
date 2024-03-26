@@ -123,6 +123,7 @@ The best results were achieved with the following parameters:
 * optimizer: Adam
 
 ### Plots
-
+![](https://github.com/NataliaNadolna/Digits-detection-and-classification/blob/main/plots.png)
 
 ### Confusion matrix
+![](https://github.com/NataliaNadolna/Digits-detection-and-classification/blob/main/matrix.png)
