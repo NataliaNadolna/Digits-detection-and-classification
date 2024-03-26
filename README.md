@@ -30,7 +30,8 @@ This model is a convolutional neural network (CNN) composed of multiple layers o
 * Flatten Layer: Flattens the feature maps into a 1D tensor, preparing them for input to the fully connected layers.
 * Linear Layer: A fully connected layer that takes the flattened features as input (in_features=hidden_units*7*7, as the spatial dimensions have been reduced by pooling operations) and produces an output tensor of size output_shape, which corresponds to the number of classes (10 classes) in a classification task.
 
-/========================================================================================================================
+```python
+========================================================================================================================
 Layer (type (var_name))                  Input Shape          Output Shape         Param #              Trainable
 ========================================================================================================================
 MNISTModel (MNISTModel)                  [32, 3, 28, 28]      [32, 10]             --                   True
@@ -59,7 +60,8 @@ Input size (MB): 0.30
 Forward/backward pass size (MB): 5.02
 Params size (MB): 0.03
 Estimated Total Size (MB): 5.35
-========================================================================================================================/
+========================================================================================================================
+```
 ## Training the model
 ### Parametres
 I achieved the best results with the following parameters:
