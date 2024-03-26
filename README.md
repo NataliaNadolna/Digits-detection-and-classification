@@ -29,7 +29,51 @@ class Img_settings:
 ```
 
 ### Image generation
-Class Writing_style in writing.py określa wygląd poszczególnego napisu
+To generate images, two classes were created: 
+* the Writing_style class, which defines the style of the digit on the generated image;
+
+```python
+class Writing_style():
+    def __init__(self, colors: list, position: dict, fonts: list, size: list, thickness: list, index: int):
+        self.color = generate_color(colors)
+
+        up_down = random.randint(position["down"], position["up"])
+        left_right = random.randint(position["left"], position["right"])
+        self.coords = (left_right, up_down)
+
+        self.font = fonts[index % len(fonts)]
+        self.thickness = thickness[index % len(thickness)]
+        self.size = random.uniform(size[0], size[1])
+```
+* the Image class, which contains methods:
+```python
+class Image():
+    def __init__(self, size: list, shape: int, colors: list):
+        self.size = size
+        self.shape = shape
+        self.colors = colors
+```
+  - generate_empty() - to create a blank image,
+```python
+    def generate_empty(self):
+        image = np.zeros((self.size[0], self.size[1], self.shape), np.uint8)
+        color = generate_color(Img_settings.background_colors)
+        image[:] = (color[0], color[1], color[2])
+        self.img = image
+```
+  - write_text() - to write text on the image according to the specified style,
+```python
+    def write_text(self, style: Writing_style, text):
+        cv2.putText(img=self.img,
+                    text=text, 
+                    org=style.coords, 
+                    fontFace=style.font, 
+                    fontScale=style.size,
+                    color=style.color, 
+                    thickness=style.thickness, 
+                    lineType=cv2.LINE_AA)
+```
+  - save() - to save the image.
 
 ### Dataset generation
 
