@@ -20,6 +20,7 @@ This project is a tool for automatic analysis of animation. The program:
 
 ## Digits detection
 The digit detection was performed using the Roboflow platform. Digits were annotated on 4 frames of the animation, and a model was trained for digit detection in the animation images.
+
 ![](https://github.com/NataliaNadolna/Digits-detection-and-classification/blob/main/prediction.jpg)
 
 ## Dataset for digits classification
@@ -55,6 +56,7 @@ A dataset of 10,000 images has been created for 10 classes representing digits. 
 Class Dataset has two methods to:
 * generate dataset;
 * change font style in specific folders;
+
 In created dataset folders with 1, 6 and 9 have changed fonts.
   
 ## Classification model
