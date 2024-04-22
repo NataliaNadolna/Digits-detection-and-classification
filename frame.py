@@ -14,7 +14,7 @@ class Frame():
     def detect_digits(self, model):
         detection = model.predict(self.img_path, confidence=40, overlap=30).json()
         model.predict(self.img_path, confidence=40, overlap=30).save("prediction.jpg")
-        #prediction_img = cv2.imread('prediction.jpg')
+        prediction_img = cv2.imread('prediction.jpg')
         return detection
 
     def find_first_number(self, detection):
@@ -51,25 +51,6 @@ class Frame():
             number.append(new_digit)
 
         return number
-    
-    # def predict_digits(self, model, number):
-
-    #     digit_list = []
-
-    #     for digit in number:
-    #         digit_list.append(digit.path)
-
-    #     results_list = model(digit_list)  
-
-    #     num = []
-    #     for result in results_list:
-    #         boxes = result.boxes  # Boxes object for bbox outputs
-    #         masks = result.masks  # Masks object for segmentation masks outputs
-    #         keypoints = result.keypoints  # Keypoints object for pose outputs
-    #         probs = result.probs  # Probs object for classification outputs
-    #         num.append(result.probs.top5[0])
-
-    #     print(f"Number: {num}")
 
     def calssify_digit(self, model, digit: Digit):
         image = torchvision.io.read_image(str(digit.path)).type(torch.float32)
