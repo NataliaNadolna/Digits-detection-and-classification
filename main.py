@@ -12,7 +12,7 @@ def main():
     project = rf.workspace().project("dog-8syau")
     detection_model = project.version(2).model
 
-    classification_model_path = 'C:/Users/Natalia/Desktop/PWr/2/NTDD/programowanie/_Digits Detection and Clasiffication/model.pth'
+    classification_model_path = './model.pth'
     classification_model = MNISTModel(input_shape=3, hidden_units=10, output_shape=10) 
     classification_model.load_state_dict(torch.load(f=classification_model_path))
 
