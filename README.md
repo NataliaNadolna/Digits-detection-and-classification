@@ -16,12 +16,12 @@ This project is a tool for automatic analysis of animation. The program:
 * calculates the speed of the dog's run based on it.
 
 ## Result
-![](https://github.com/NataliaNadolna/Digits-detection-and-classification/blob/main/result.gif)
+![](https://github.com/NataliaNadolna/Digits-detection-and-classification/blob/main/results/result.gif)
 
 ## Digits detection
 The digit detection was performed using the Roboflow platform. Digits were annotated on 4 frames of the animation, and a model was trained for digit detection in the animation images.
 
-![](https://github.com/NataliaNadolna/Digits-detection-and-classification/blob/main/prediction.jpg)
+![](https://github.com/NataliaNadolna/Digits-detection-and-classification/blob/main/results/prediction.jpg)
 
 ## Dataset for digits classification
 Created a dataset of images representing digits. Each image, sized 28x28 pixels, depicts a single digit (from 0 to 9). The color, font, size, thickness, and position of the digit on the image are specified in the Img_settings class.
@@ -120,7 +120,7 @@ The best results were achieved with the following parameters:
 * optimizer: Adam
 
 ### Plots
-![](https://github.com/NataliaNadolna/Digits-detection-and-classification/blob/main/plots.png)
+![](https://github.com/NataliaNadolna/Digits-detection-and-classification/blob/main/results/plots.png)
 
 ### Confusion matrix
-![](https://github.com/NataliaNadolna/Digits-detection-and-classification/blob/main/matrix.png)
+![](https://github.com/NataliaNadolna/Digits-detection-and-classification/blob/main/results/matrix.png)
