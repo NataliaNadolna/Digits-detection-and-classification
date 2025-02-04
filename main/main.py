@@ -3,17 +3,21 @@ from roboflow import Roboflow
 from frame import Frame
 from models import *
 import torch
+import os
+from dotenv import load_dotenv
 
-def main():
+def main(video_path, detection_project_name, detection_project_version, classification_model_path, classification_model):
 
-    cap = cv2.VideoCapture('./main/animation.gif')
+    cap = cv2.VideoCapture(video_path)
 
-    rf = Roboflow(api_key="zYTszjLxeYF4ctnj9MbI")
-    project = rf.workspace().project("dog-8syau")
-    detection_model = project.version(2).model
-
-    classification_model_path = './digit_classification/train_model/model.pth'
-    classification_model = MNISTModel(input_shape=3, hidden_units=10, output_shape=10) 
+    # load detection model
+    load_dotenv()
+    ROBOFLOW_API_KEY = os.getenv("ROBOFLOW_API_KEY")
+    rf = Roboflow(api_key=ROBOFLOW_API_KEY)
+    project = rf.workspace().project(detection_project_name)
+    detection_model = project.version(detection_project_version).model
+ 
+    # load classification model
     classification_model.load_state_dict(torch.load(f=classification_model_path))
 
     if (cap.isOpened() == False): 
@@ -43,5 +47,9 @@ def main():
     cv2.destroyAllWindows()
 
 if __name__=="__main__":
-    main()
+    main(video_path = './main/animation.gif', 
+        detection_project_name ="dog-8syau", 
+        detection_project_version = 2,
+        classification_model_path = './digit_classification/train_model/model.pth',
+        classification_model = MNISTModel(input_shape=3, hidden_units=10, output_shape=10))
 
